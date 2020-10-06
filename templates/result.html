@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>Diabetes Predictor</title>
+	</head>
+
+    <body>
+
+        <!-- Website Title -->
+		<div class="container">
+            <h2 class='container-heading'><span class="heading_font">Diabetes Checker</span></h2>
+            <div class='description'>
+    			<p>A Machine Learning Web App to predict diabetes .</p>
+    		</div>
+    	</div>
+
+		<!-- Result -->
+		<div class="results">
+			{% if prediction==1 %}
+				<h1>Prediction: <span class='danger'> You seems to have DIABETES.Please follow below diet and pay a visit to nearest health care soon</span></h1>
+				<img class="gif" src="{{ url_for('static', filename='diabetes.jpg') }}" alt="Diabetes Image">
+			{% elif prediction==0 %}
+				<h1>Prediction: <span class='safe'> you are all well. DON'T have diabetes.</span></h1>
+				<img class="gif1" src="{{ url_for('static', filename='healthy.jpg') }}" alt="Not Diabetes Image">
+			{% endif %}
+		</div>
+
+	</body>
+</html>
